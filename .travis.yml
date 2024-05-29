@@ -27,7 +27,7 @@ jobs:
                  - libtspi-dev
                  - expect
                  - libldap2-dev
-                 - get
+                 - wget
                  - libudev-dev
                  - autoconf-archive
                  - libcap-dev
@@ -40,7 +40,7 @@ jobs:
               packages:
               - expect
               - libldap2-dev
-              - get
+              - wget
               - libudev-dev
               - autoconf-archive
               - libcap-dev
@@ -54,7 +54,7 @@ jobs:
               packages:
               - expect
               - libldap2-dev
-              - get
+              - wget
               - libudev-dev
               - autoconf-archive
               - libcap-dev
@@ -70,7 +70,7 @@ jobs:
                 - libica-dev
                 - expect
                 - libldap2-dev
-                - get
+                - wget
                 - libudev-dev
                 - autoconf-archive
                 - libcap-dev
@@ -86,7 +86,7 @@ jobs:
                 - libica-dev
                 - expect
                 - libldap2-dev
-                - get
+                - wget
                 - libudev-dev
                 - autoconf-archive
                 - libcap-dev
@@ -100,7 +100,7 @@ jobs:
               packages:
               - expect
               - libldap2-dev
-              - get
+              - wget
               - libudev-dev
               - autoconf-archive
               - libcap-dev
@@ -114,7 +114,7 @@ jobs:
               packages:
               - expect
               - libldap2-dev
-              - get
+              - wget
               - libudev-dev
               - autoconf-archive
               - libcap-dev
