@@ -19,6 +19,12 @@ jobs:
               packages:
                 - trousers
                 - libtspi-dev
+                - expect
+                - libldap2-dev
+                - get
+                - libudev-dev
+                - autoconf-archive
+                - libcap-dev
           name: "linux-x86-clang"
           os: linux
           compiler: clang
@@ -26,8 +32,14 @@ jobs:
         - addons:
             apt:
               packages:
-                - trousers
+                 - trousers
                 - libtspi-dev
+                - expect
+                - libldap2-dev
+                - get
+                - libudev-dev
+                - autoconf-archive
+                - libcap-dev
           name: "linux-x86-gcc"
           os: linux
           compiler: gcc
@@ -47,6 +59,12 @@ jobs:
               packages:
                 - libica3
                 - libica-dev
+                - expect
+                - libldap2-dev
+                - get
+                - libudev-dev
+                - autoconf-archive
+                - libcap-dev
           name: "linux-s390x-clang"
           os: linux
           arch: s390x
@@ -57,6 +75,12 @@ jobs:
               packages:
                 - libica3
                 - libica-dev
+                - expect
+                - libldap2-dev
+                - get
+                - libudev-dev
+                - autoconf-archive
+                - libcap-dev
           name: "linux-s390x-gcc"
           os: linux
           arch: s390x
