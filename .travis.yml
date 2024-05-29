@@ -33,13 +33,13 @@ jobs:
             apt:
               packages:
                  - trousers
-                - libtspi-dev
-                - expect
-                - libldap2-dev
-                - get
-                - libudev-dev
-                - autoconf-archive
-                - libcap-dev
+                 - libtspi-dev
+                 - expect
+                 - libldap2-dev
+                 - get
+                 - libudev-dev
+                 - autoconf-archive
+                 - libcap-dev
           name: "linux-x86-gcc"
           os: linux
           compiler: gcc
