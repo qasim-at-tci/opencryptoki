@@ -1,15 +1,6 @@
 os: linux
 dist: focal
 
-addons:
-  apt:
-    packages:
-      - expect
-      - libldap2-dev
-      - get
-      - libudev-dev
-      - autoconf-archive
-      - libcap-dev
 language: c
 
 jobs:
@@ -44,12 +35,30 @@ jobs:
           os: linux
           compiler: gcc
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-testcases --with-systemd" CFLAGS="-O3 -Wno-clobbered -Werror"
-        - name: "linux-ppc64le-clang"
+        - addons:
+            apt:
+              packages:
+              - expect
+              - libldap2-dev
+              - get
+              - libudev-dev
+              - autoconf-archive
+              - libcap-dev
+          name: "linux-ppc64le-clang"
           os: linux
           arch: ppc64le
           compiler: clang
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-tpmtok --enable-testcases --with-systemd" CFLAGS="-O3 -Werror"
-        - name: "linux-ppc64le-gcc"
+        - addons:
+            apt:
+              packages:
+              - expect
+              - libldap2-dev
+              - get
+              - libudev-dev
+              - autoconf-archive
+              - libcap-dev
+          name: "linux-ppc64le-gcc"
           os: linux
           arch: ppc64le
           compiler: gcc
@@ -86,12 +95,30 @@ jobs:
           arch: s390x
           compiler: gcc
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-tpmtok --enable-icatok --enable-ep11tok --enable-testcases --with-systemd" CFLAGS="-O3 -Wno-clobbered -Werror"
-        - name: "linux-arm64-clang"
+        - addons:
+            apt:
+              packages:
+              - expect
+              - libldap2-dev
+              - get
+              - libudev-dev
+              - autoconf-archive
+              - libcap-dev
+          name: "linux-arm64-clang"
           os: linux
           arch: arm64
           compiler: clang
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-tpmtok --enable-testcases  --with-systemd" CFLAGS="-O3 -Werror"
-        - name: "linux-arm64-gcc"
+        - addons:
+            apt:
+              packages:
+              - expect
+              - libldap2-dev
+              - get
+              - libudev-dev
+              - autoconf-archive
+              - libcap-dev
+          name: "linux-arm64-gcc"
           os: linux
           arch: arm64
           compiler: gcc
