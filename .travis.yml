@@ -1,21 +1,34 @@
 os: linux
 dist: focal
 
+addons:
+  apt:
+    packages:
+      - expect
+      - libldap2-dev
+      - get
+      - libudev-dev
+      - autoconf-archive
+      - libcap-dev
 language: c
-
-before_install:
-    - sudo apt-get -qq update
-    - sudo apt-get install -y expect libldap2-dev wget libudev-dev autoconf-archive libcap-dev
-    - if [ "$TRAVIS_CPU_ARCH" != "amd64" ]; then sudo apt-get install -y trousers libtspi-dev; fi
-    - if [ "$TRAVIS_CPU_ARCH" = "s390x" ]; then sudo apt-get install -y libica3 libica-dev; fi
 
 jobs:
     include:
-        - name: "linux-x86-clang"
+        - addons:
+            apt:
+              packages:
+                - trousers
+                - libtspi-dev
+          name: "linux-x86-clang"
           os: linux
           compiler: clang
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-testcases --with-systemd" CFLAGS="-O3 -Werror -Wno-error=unused-but-set-variable -DDEBUG"
-        - name: "linux-x86-gcc"
+        - addons:
+            apt:
+              packages:
+                - trousers
+                - libtspi-dev
+          name: "linux-x86-gcc"
           os: linux
           compiler: gcc
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-testcases --with-systemd" CFLAGS="-O3 -Wno-clobbered -Werror"
@@ -29,12 +42,22 @@ jobs:
           arch: ppc64le
           compiler: gcc
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-tpmtok --enable-testcases --with-systemd" CFLAGS="-O3 -Wno-clobbered -Werror -DDEBUG"
-        - name: "linux-s390x-clang"
+        - addons:
+            apt:
+              packages:
+                - libica3
+                - libica-dev
+          name: "linux-s390x-clang"
           os: linux
           arch: s390x
           compiler: clang
           env: CONFIG_OPTS="--enable-swtok --enable-icsftok --enable-ccatok --enable-tpmtok --enable-icatok --enable-ep11tok --enable-testcases --with-systemd" CFLAGS="-O3 -Werror -DDEBUG"
-        - name: "linux-s390x-gcc"
+        - addons:
+            apt:
+              packages:
+                - libica3
+                - libica-dev
+          name: "linux-s390x-gcc"
           os: linux
           arch: s390x
           compiler: gcc
